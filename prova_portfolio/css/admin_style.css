@@ -1,0 +1,36 @@
+/* Add your admin panel styling here */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+.admin-container {
+    display: flex;
+}
+
+.admin-nav {
+    width: 200px;
+    background-color: #333;
+    color: #fff;
+}
+
+.admin-nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.admin-nav li {
+    padding: 10px;
+    border-bottom: 1px solid #555;
+}
+
+.admin-nav a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+}
+
+.admin-content {
+    flex-grow: 1;
+    padding: 20px;
+}
