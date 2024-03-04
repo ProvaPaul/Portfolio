@@ -175,6 +175,7 @@ nav button {
 
 .nav_menu a {
     font-size: 1rem;
+    color:white;
 }
 
 .nav_menu a:hover {
@@ -288,7 +289,7 @@ header {
 
 .about {
     text-align: center;
-    margin-bottom: 0; /* Reduce the margin-bottom */
+    margin:0;
 }
 
 .about_container {
@@ -297,25 +298,23 @@ header {
     align-items: center;
     justify-content: center;
     position: relative;
-    margin-bottom: 1rem; /* Adjust the margin-bottom */
-    overflow: -moz-hidden-unscrollable;
+    margin-bottom: 0.5rem;
 }
-
 
 .about_container .about-img {
     border: 3px solid var(--primary);
     border-radius: 5%;
     overflow: hidden;
     max-width: 16.5rem;
-    max-height: 15.5rem;
-    margin-right: 3rem;
+    max-height: 16.5rem;
+    margin-right: 2rem;
     position: relative;
     align-items: center;
-    margin-bottom: -15rem;
+    margin-bottom: 2rem;
 }
 
 .about_container .about-text {
-    max-width: 90%;
+    max-width: 70%;
     text-align: justify;
     line-height: 1.5rem;
     letter-spacing: 0.5px;
@@ -324,21 +323,16 @@ header {
 
 .about_container .about-text p {
     margin-bottom: 0.8rem;
-    font-size: 1rem;
-    font-weight: 410;
-    
 }
 
 .about_container .about-text .text {
     margin-bottom: 1rem;
-    font-size: large;
 }
 
 .about_container .about-text .text span {
     color: var(--primary);
     font-weight: 500;
 }
-
 /* ======educaton======= */
 .Education {
     text-align: center;
@@ -633,7 +627,7 @@ header {
 
 .projects_container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* Updated to 2 columns */
     gap: 2rem;
 }
 

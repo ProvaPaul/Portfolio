@@ -76,4 +76,16 @@ $data = mysqli_fetch_assoc($result);
                     <label>Submit: </label>
                     <input type="submit" name="send_message"></button>
 </form>
+<form method="POST">
+                    <button name="logout">Return</button>
+                        </form></li>
+
+    <?php
+    // Updated code for the "Return" button
+    if (isset($_POST['logout'])) {
+        echo '<script>window.location.href = "admin_panel.php";</script>';
+exit();
+
+    }
+    ?>
 

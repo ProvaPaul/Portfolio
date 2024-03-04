@@ -18,6 +18,7 @@ $data = mysqli_fetch_assoc($result);
     <!-- Typing Script CDN Link -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.0/typed.min.js"></script>
 
+
     <!-- Custom CSS file link -->
     <link rel="stylesheet" href="css/style.css">
 
@@ -39,7 +40,7 @@ $data = mysqli_fetch_assoc($result);
                 <li><a href="#courses">Courses</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="http://localhost/prova_portfolio/index.php">Admin</a></li>
+                <li><a href="http://localhost/prova_portfolio/includes/login.php">Admin</a></li>
 
             </ul>
             <button id="open-menu-btn"><i class="fa-solid fa-bars"></i></button>
@@ -64,7 +65,7 @@ $data = mysqli_fetch_assoc($result);
                 <div class="text-2"><?=$data['name']?></div>
                 <div class="text-3">And I'm a <span class="typing"></span></div>
                 <div class="text-4"><p> <?=$data['explain']?></p></div>
-                <a href="https://facebook.com/developersahadat" class="btn">Download CV</a>
+                <a href=" http://localhost/prova_portfolio/includes/login.php" class="btn">Download CV</a>
                 <div class="media-icons">  
                 <?php   
           if($data['facebook']){
@@ -137,7 +138,7 @@ $data = mysqli_fetch_assoc($result);
                         <h3>BSC in Computer Science and Engineering</h3>
                         <h5>2021-Present</h5>
                         <p>Khulna University of Engineering & Technology,Khulna</p>
-                        <a href="#">Learn More</a>
+                        <a href="#" target="blank"><img src="image/hsc.jpg">Learn More</a>
                     </div>
                 </div>
                 <div class="card">
@@ -265,42 +266,39 @@ $data = mysqli_fetch_assoc($result);
             }
             ?>
     </div>
+        </div>
     <!-- My courses Section End Here -->
 
     <!-- My projects Section Start Here -->
     <div class="projects" id="projects">
-        <h2 class="border_bottom">
-            My projects
-        </h2>
-        <?php 
+    <h2 class="border_bottom">My Popular Projects</h2>
+    <div class="container projects_container">
+        <?php
         $projects = "SELECT * FROM `projects`";
         $projects_result = mysqli_query($con, $projects);
-      ?>
-        <div class="container projects_container">
-            <?php
-            if($projects_result -> num_rows > 0){
-            while($projects_data = $projects_result->fetch_assoc()){
-              ?>
-                <article class="course">
-                <div class="course_image">
-                <img src="<?=$projects_data['image']?>">
-                </div>
-                   <div class="course_info">
-                    <h4><?=$projects_data['heading']?></h4>
-                    <p><?=$projects_data['para']?></p>
-                    <a href="<?=$projects_data['link']?>" class="btn"><?=$projects_data['learn']?></a>
-                </div>
-              <?php
-            }
-            }
-            else{
-                 echo "No Service Found.";
-             }
-        ?>
-            </article>
 
-        </div>
+        if ($projects_result->num_rows > 0) {
+            while ($projects_data = $projects_result->fetch_assoc()) {
+        ?>
+                <article class="course">
+                    <div class="course_image">
+                        <img src="<?= $projects_data['image'] ?>" alt="Project Image">
+                    </div>
+                    <div class="course_info">
+                        <h4><?= $projects_data['heading'] ?></h4>
+                        <p><?= $projects_data['para'] ?></p>
+                        <a href="<?= $projects_data['link'] ?>" class="btn"><?= $projects_data['learn'] ?></a>
+                    </div>
+                </article>
+        <?php
+            }
+        } else {
+            echo "No Projects Found.";
+        }
+        ?>
     </div>
+</div>
+
     <!-- My projects Section End Here -->
 
 <!-- contact section -->
@@ -388,4 +386,8 @@ $data = mysqli_fetch_assoc($result);
     <!-- Footer Section End Here -->
     <!-- Custom Javascript File Link -->
     <script src="js/script.js"></script>
+
+    <!-- <script src="js/typed.js"></script> -->
+
 </body>
+</html>

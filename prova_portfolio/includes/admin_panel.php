@@ -33,6 +33,9 @@ $data = mysqli_fetch_assoc($result);
                     <li><form method="POST">
                     <button name="logout">Log Out</button>
                         </form></li>
+                    <li><form method="POST">
+                    <button name="home">HomePage</button>
+                        </form></li>
                 </ul>
             </nav>
         </aside>
@@ -59,6 +62,14 @@ $data = mysqli_fetch_assoc($result);
 // Assume this is the end of your PHP file
 if (isset($_POST['logout'])) {
     session_destroy();
-    header("location: login.php");
+    header('location: login.php');
 }
 ?>
+<?php
+    // Updated code for the "Return" button
+    if (isset($_POST['home'])) {
+        echo '<script>window.location.href = "/prova_portfolio/index.php";</script>';
+        exit();
+    }
+?>
+
